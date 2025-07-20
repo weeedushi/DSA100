@@ -112,6 +112,7 @@ void pattern4_method2(int n){
         cout<<endl;
     }
 }
+
 int main(){
     int n;
     cin>>n;
