@@ -54,14 +54,67 @@ void pattern4(int n){
 
 void pattern5(int n){
     for(int i=0;i<n;i++){
-        char ch='A';
-        for(int j=0;j<n-i;j++){
+        for(char ch='A';ch<'A'+n-i;ch++){
             cout<<ch<<" ";
+        }
+        cout<<endl;
+    }
+}
+
+void pattern6(int n){
+    for(int i=0;i<n;i++){
+        char ch='A'+i;
+        for(int j=0;j<=i;j++){
+            cout<<ch<<" ";
+        }
+        cout<<endl;
+    }
+}
+
+void pattern7(int n){
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n-i-1;j++){
+            cout<<" ";
+        }
+        for(int j=0;j<=i;j++){
+            char ch='A'+j;
+            cout<<ch;
+        }
+        for(int j=i;j>0;j--){
+            char ch='A'+j-1;
+            cout<<ch;
+        }
+        cout<<endl;
+    }
+}
+
+void pattern7_method2(int n){
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n-i-1;j++){
+            cout<<" ";
+        }
+        char ch='A';
+        int breakpoint= (2*i+1)/2;
+        for(int j=1;j<=2*i+1;j++){
+            cout<<ch;
+            if(j<=breakpoint) ch++;
+            else ch--;
+        }
+        cout<<endl;
+    }
+}
+
+void pattern8(int n){
+    for(int i=0;i<n;i++){
+        char ch='A'+n-1-i;
+        for(int j=0;j<=i;j++){
+            cout<<ch;
             ch++;
         }
         cout<<endl;
     }
 }
+
 int main(){
     int n;
     cin>>n;
@@ -71,4 +124,8 @@ int main(){
     pattern3(n);
     pattern4(n);
     pattern5(n);
+    pattern6(n);
+    pattern7(n);
+    pattern7_method2(n);
+    pattern8(n);
 }
