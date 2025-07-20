@@ -30,10 +30,22 @@ void pattern2(int n){
     }
 }
 
+void pattern3(int n){
+    int count=1;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<=i;j++){
+            cout<<count<<" ";
+            count++;
+        }
+        cout<<endl;
+    }
+}
+
 int main(){
     int n;
     cin>>n;
 
     pattern1(n);
     pattern2(n);
+    pattern3(n);
 }
